@@ -24,7 +24,7 @@ const listTasks = () => {
         return null
     } else {
         for (let task in tasks) {
-            console.log(`${task.nextId} : ${task.name} ${task.completed ? '✅' : '❌'} `) // ternary operator will evaluate to a value
+            console.log(`${task.nextId} : ${task.name} ${task.complete ? '✅' : '❌'} `) // ternary operator will evaluate to a value
         }
     }
 }
@@ -41,6 +41,27 @@ const completeTask = (id) => {
                 return
             } else {
                 continue
+            }
+        }
+    }
+}
+
+const listOpenTasks = () => {
+    tasks.forEach((task) => {
+        if (task.complete === false) {
+            console.log(`Task ${task.id} : ${task.name} ❌`)
+        }
+    })
+}
+
+const deleteTask = (id) => {
+    if (id >= nextId) {
+        console.log("Task does not exist.")
+        return
+    } else {
+        for (let task in tasks) {
+            if (task.id === id){
+                tasks.
             }
         }
     }
