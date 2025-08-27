@@ -28,3 +28,20 @@ const listTasks = () => {
         }
     }
 }
+
+const completeTask = (id) => {
+    if (id >= nextId) {
+        console.log(`Task ${id} does not exist`)
+        return null
+    } else {
+        for (let task in tasks) {
+            if (task.id === id) {
+                task.complete = true;
+                console.log('Task has been completed')
+                return
+            } else {
+                continue
+            }
+        }
+    }
+}
